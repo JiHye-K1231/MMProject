@@ -12,7 +12,7 @@ import java.util.List;
 
 import jdbc.JdbcUtil;
 import model.ProductionProcess;
-import model.Sale;
+
 
 public class ProductionProcessDAO {
 
@@ -21,7 +21,7 @@ public class ProductionProcessDAO {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			pstmt = conn.prepareStatement(
+			pstmt = conn.prepareStatement(//gg
 					"INSERT INTO ProductionProcess (ProcessCode, ProcessName, ProcessOrder) " + "VALUES (?, ?, ?)");
 			pstmt.setString(1, productionProcess.getProcessCode());
 			pstmt.setString(2, productionProcess.getProcessName());
