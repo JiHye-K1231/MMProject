@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 
 public class Quote {
-
+	private Integer quote_no;
 	private String QuoteID;
 	private Date QuoteDate;
 	private String QuoteNumber;
@@ -14,10 +14,11 @@ public class Quote {
 	private Double TotalAmount;
 	private String Status;
 	private String CreatedVoucher;
-	
-	public Quote(String quoteID, Date quoteDate, String quoteNumber, String customerCode, String employeeCode,
-			String productCode, Date validityPeriod, Double totalAmount, String status, String createdVoucher) {
-		
+
+	public Quote(Integer quote_no, String quoteID, Date quoteDate, String quoteNumber, String customerCode,
+			String employeeCode, String productCode, Date validityPeriod, Double totalAmount, String status,
+			String createdVoucher) {
+		this.quote_no = quote_no;
 		this.QuoteID = quoteID;
 		this.QuoteDate = quoteDate;
 		this.QuoteNumber = quoteNumber;
@@ -28,6 +29,10 @@ public class Quote {
 		this.TotalAmount = totalAmount;
 		this.Status = status;
 		this.CreatedVoucher = createdVoucher;
+	}
+
+	public Integer getQuote_no() {
+		return quote_no;
 	}
 
 	public String getQuoteID() {
@@ -109,6 +114,5 @@ public class Quote {
 	public void setCreatedVoucher(String createdVoucher) {
 		CreatedVoucher = createdVoucher;
 	}
-	
-	
+
 }
