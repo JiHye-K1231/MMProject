@@ -39,7 +39,8 @@ public class QuoteDAO {
 
             if (insertedCount > 0) {
             	stmt =conn.createStatement();//아래 쿼리문은 가장 최근에 추가된 견적서 번호를 알고 싶다는 뜻
-                rs =stmt.executeQuery("SELECT quote_no FROM (SELECT quote_no FROM Quote ORDER BY quote_no DESC) WHERE ROWNUM = 1;");
+                rs =stmt.executeQuery("SELECT quote_no_seq.CURRVAL FROM DUAL");
+                		//("SELECT quote_no FROM (SELECT quote_no FROM Quote ORDER BY quote_no DESC) WHERE ROWNUM = 1;");
                 //SELECT quote_no FROM Quote WHERE ROWNUM = 1 ORDER BY quote_no DESC; 이것도 가능할듯?
                 if(rs.next()) {
                 	Integer newNo = rs.getInt(1);
